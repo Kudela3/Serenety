@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <svg class="logo" id="logo"  viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="transform: rotate();">
+            <circle cx="100" cy="100" r="90" fill="#e57373"></circle>
+            <path d="M50 150 Q100 50 150 150" stroke="white" stroke-width="10" fill="none"></path>
+            <circle cx="100" cy="100" r="10" fill="white"></circle>
+        </svg>
+        <h1>Salão de beleza Serenidade</h1>
+    </header>
+
+    <main id="main" class="main">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contacta-nos</a></li>
+            </ul>
+        </nav>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Descobre a tua verdadeira beleza</h2>
+                <p>Delicie-se com tratamentos luxuosos que nutrem seu corpo e alma</p>
+                <a href="#" class="cta">Explore os nossos serviços</a>
+            </div>
+        </section>
+        <section id="services" class="services">
+                <h2>Nossos Serviços</h2>
+                <div class="service-grid">
+                    <div class="service-item" id="corte" class="corte">
+                        <h3>Cortes e Penteados</h3>
+                        <p>Transforma o teu lookcom nossos cabelereiros</p>
+                    </div>
+                    <div class="service-item" id="facial">
+                        <h3>Tratamento facial</h3>
+                        <p>Rejuvenesse a tua pele com os nossos serviços premiun</p>
+                    </div>
+                    <div class="service-item" id="manicure">
+                        <h3>Manicure e Pedicure</h3>
+                        <p>Deixa as tuas unhas mais lindas com nossos tramentos para mãos e pernas</p>
+                    </div>
+                    <div class="service-item" id="massagem">
+                        <h3>Massagem</h3>
+                        <p>Relaxa e acomoda-se com as nossas tecnicas de massagem calmante</p>
+                    </div>
+                    </div>
+                </div>
+                <a href="#" class="cta">Marcar uma sessão</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Serenity Beaty Salon. Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        var a = [3];
+        var n = [3];
+        a[0] = window.document.getElementById("corte");
+        a[1] = window.document.getElementById("facial");
+        a[2] = window.document.getElementById("manicure");
+        a[3] = window.document.getElementById("massagem");
+        
+        var b = window.document.getElementById("main");
+
+        a[0].addEventListener("mouseover", entrar);
+        a[0].addEventListener("mouseleave", sair);
+        
+        a[1].addEventListener("mouseover", entrar1);
+        a[1].addEventListener("mouseleave", sair1);
+
+
+        a[2].addEventListener("mouseover", entrar2);
+        a[2].addEventListener("mouseleave", sair2);
+
+
+        a[3].addEventListener("mouseover", entrar3);
+        a[3].addEventListener("mouseleave", sair3);
+
+        function entrar(){
+            b.classList.add('animacao');
+        }
+
+        function sair(){
+            b.classList.remove("animacao");
+        }
+
+        function entrar1() {
+            b.classList.add('animacao1');
+        }
+
+        function sair1() {
+            b.classList.remove("animacao1");
+        }
+
+        function entrar2() {
+            b.classList.add('animacao2');
+        }
+
+        function sair2() {
+            b.classList.remove("animacao2");
+        }
+
+        function entrar3() {
+            b.classList.add('animacao3');
+        }
+
+        function sair3() {
+            b.classList.remove("animacao3");
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor=> {anchor.addEventListener('click', function(e){
+            e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+     });
+    });
+
+        var logo = document.getElementById("logo");
+        let rotation = 0;
+
+        function rotateLogo(){
+            rotation += 0.5;
+            logo.style.transform = `rotate(${rotation}deg)`;
+            requestAnimationFrame(rotateLogo)
+        }
+        rotateLogo();
+
+        
+
+    </script>
+</body>
+</html>
